@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&display=swap");
+@import "tailwindcss";
+
+:root {
+  --bg-main: #fdfbf7;
+  --text-main: #1c1917;
+  --accent-primary: #ff4d4d;
+  --accent-secondary: #4d79ff;
+  --border-color: #000000;
+  --shadow-color: #000000;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "DM Mono", monospace;
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.neo-box {
+  background: white;
+  border: 3px solid var(--border-color);
+  box-shadow: 5px 5px 0px 0px var(--shadow-color);
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.neo-box:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px 0px var(--shadow-color);
+}
+
+.neo-button {
+  background: var(--accent-primary);
+  color: white;
+  border: 3px solid var(--border-color);
+  box-shadow: 4px 4px 0px 0px var(--shadow-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.neo-button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0px 0px var(--shadow-color);
+}
+
+.neo-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--shadow-color);
+}
+
+.neo-input {
+  border: 3px solid var(--border-color);
+  background: white;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.1);
+  font-family: "DM Mono", monospace;
+  transition: all 0.2s ease;
+}
+
+.neo-input:focus {
+  outline: none;
+  box-shadow: 6px 6px 0px 0px var(--accent-secondary);
+  border-color: var(--accent-secondary);
+}
+
+.neo-tag {
+  border: 2px solid var(--border-color);
+  font-weight: bold;
+  box-shadow: 2px 2px 0px 0px var(--shadow-color);
+  transition: all 0.2s ease;
+}
+
+.neo-tag:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px 0px var(--shadow-color);
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) skewY(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) skewY(0);
+  }
+}
+
+.animate-reveal {
+  opacity: 0;
+  animation: reveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
